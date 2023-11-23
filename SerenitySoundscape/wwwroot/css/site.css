@@ -1,22 +1,438 @@
-html {
-  font-size: 14px;
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../Fonts/Cinzel-VariableFont_wght.ttf') format('truetype');
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+nav a {
+    color: aliceblue;
+    text-decoration: none;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    nav a:hover {
+        color: #802bb1;
+    }
+
+#nav-styles {
+    color: gold;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+    #nav-styles:hover {
+        color: #802bb1;
+    }
 
 body {
-  margin-bottom: 60px;
+    font-family: 'Cinzel', sans-serif;
+    font-style: italic;
+    background-color: rgb(16, 9, 47);
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+.privacy {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel';
+    font-size: 32px;
+    color: aliceblue;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    border: 1px solid aliceblue;
+}
+
+.playimage {
+    width: 100px;
+    height: 100px;
+    border: 2px solid aliceblue;
+}
+
+.quish {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+}
+
+.quish-purple {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    color: #802bb1;
+}
+
+.index-table {
+    width: 100%;
+    border-collapse: collapse;
+    height: auto;
+    justify-content: center;
+    display: block;
+    margin: auto;
+}
+
+.index-audio {
+    border-bottom: 1px dotted aliceblue;
+}
+
+
+
+.index-nature-checkbox {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    color: gold;
+    padding-right: 125px;
+    border-bottom: 1px dotted aliceblue;
+}
+
+.index-manmade-checkbox {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    color: gold;
+    padding-right: 20px;
+    border-bottom: 1px dotted aliceblue;
+}
+
+.index-background-checkbox {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    color: gold;
+    padding-right: 145px;
+    border-bottom: 1px dotted aliceblue;
+}
+
+.index-nature-desc {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    color: #802bb1;
+    padding-right: 107px;
+    border-bottom: 1px dotted aliceblue;
+}
+
+.index-manmade-desc {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    color: #802bb1;
+    padding-right: 20px;
+    border-bottom: 1px dotted aliceblue;
+}
+
+.index-background-desc {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    color: #802bb1;
+    padding-right: 68px;
+    border-bottom: 1px dotted aliceblue;
+}
+
+.checkbox {
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+label {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form {
+    display: block;
+    width: 50%;
+    padding: .375rem .75rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-update {
+    width: 40%;
+    padding: .375rem .75rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: rgb(21, 10, 87);
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: aliceblue;
+    opacity: .9;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: aliceblue;
+    opacity: .9;
+    border-radius: 50%;
+}
+
+    audio::-webkit-media-controls-play-button:hover {
+        background-color: rgba(22, 29, 226, .8);
+    }
+
+audio::-webkit-media-controls-current-time-display {
+    color: aliceblue;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    color: aliceblue;
+}
+
+audio::-webkit-media-controls-timeline {
+    background-color: aliceblue;
+    opacity: .9;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: aliceblue;
+    border-radius: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+audio {
+    margin-top: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: midnightblue;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(52, 54, 72);
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(21, 10, 87);
+    color: aliceblue;
+    border: 2px solid aliceblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#updatebutton {
+    padding: 10px;
+    background-color: rgb(21, 10, 87);
+    color: aliceblue;
+    border: 2px solid aliceblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(26, 3, 83);
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 10px 10px 0 aliceblue;
+}
+
+.create-mix-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.index-h2 {
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.index-h3 {
+    text-align: center;
+    color: gold;
+}
+
+.soundscapetitle-h5 {
+    text-align: center;
+    color: gold;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.soundscape-container {
+    margin-left: 100px;
+    margin-bottom: 40px;
+}
+
+.soundscape-list {
+    list-style: none;
+}
+
+.soundscape-h6 {
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.mixlist {
+    color: gold;
+}
+
+.updatemix-h5 {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 60px;
+    color: gold;
+}
+
+.playmix-h5 {
+    display: block;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-right: 60px;
+    color: gold;
+}
+
+.updatemix-h6 {
+    font-size: 25px;
+    margin-top: 40px;
+    color: gold;
+}
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.p-container {
+    text-align: center;
+    width: 790px;
+}
+
+.updatemix-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+    .updatemix-container section {
+        text-align: center;
+        flex: 1;
+        padding: 20px;
+    }
+
+.updatelist {
+    text-align: left;
+    list-style: none;
+}
+
+.playmix-container {
+    width: 85%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.createmix-h2 {
+    margin-bottom: 20px;
+    display: block;
+    color: gold;
+}
+
+.createmix-h5 {
+    margin-top: 10px;
+    text-align: center;
+    color: gold;
+}
+
+.createmix-list {
+    list-style: none;
+    text-align: justify-all;
+    margin-left: 350px;
+}
+
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.d-inline {
+    display: inline;
+}
+
+.nav-link {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../Fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+.nav-updatelink {
+    font-family: 'Bebas Neue';
+    color: gold;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+    .nav-updatelink:hover {
+        color: #802bb1;
+    }
+
+.nav-linkcaution {
+    font-family: 'Bebas Neue';
+    color: aliceblue;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+    .nav-linkcaution:hover {
+        color: red;
+    }
+
+.delete-form {
+    margin-top: 0em;
+}
+
+#inline-id {
+    display: flex;
 }

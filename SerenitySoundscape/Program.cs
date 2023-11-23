@@ -1,7 +1,20 @@
+using MySql.Data.MySqlClient;
+using SerenitySoundscape;
+using System.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("relaxingsounds"));
+    conn.Open();
+    return conn;
+});
+
+builder.Services.AddTransient<ISoundRepo, SoundRepo>();
 
 var app = builder.Build();
 
@@ -22,6 +35,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Mix}/{action=Index}/{id?}");
 
 app.Run();
