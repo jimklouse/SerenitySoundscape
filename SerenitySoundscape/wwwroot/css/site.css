@@ -29,6 +29,42 @@ body {
     padding: 0;
 }
 
+.about-container {
+    margin-bottom: 75px;
+}
+
+.about-h {
+    color: #802bb1;
+    margin-bottom: 20px;
+}
+
+.aboutcenter-h {
+    text-align: center;
+    color: gold;
+    margin-bottom: 40px;
+}
+
+.aboutcentersub-h {
+    text-align: center;
+    color: gold;
+    margin-bottom: 50px;
+}
+
+.p-about {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.aboutpic {
+    display: block;
+    width: 40%;
+    height: auto;
+    border: 2px solid aliceblue;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
 .privacy {
     margin-bottom: 20px;
 }
