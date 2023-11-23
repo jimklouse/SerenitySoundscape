@@ -1,0 +1,66 @@
+﻿@model Mix
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/js/site.js"></script>
+    <link href="/css/site.css" rel="Stylesheet" />
+    <title>Update Mix</title>
+</head>
+<body>
+    @using (Html.BeginForm("UpdateMixInDatabase", "Mix", FormMethod.Post))
+    {
+
+
+        <section class="index-container">
+            <h5 class="updatemix-h5">Update '@Model.Name'</h5>
+            <label asp-for="Name" class="label">Mix Name:</label>
+            <input asp-for="MixID" type="hidden" value="@Model.MixID" />
+            <input asp-for="Name" class="form-update" />
+            <input type="submit" value="Update Mix" id="updatebutton" />
+
+        </section>
+
+        <div class="updatemix-container d-flex">
+            <section>
+
+
+                <h6 class="updatemix-h6">Add These Sounds To Your Mix:</h6>
+                <p>Just check the box for each sound to add to your mix.</p>
+
+                <ul>
+                    @foreach (var sound in Model.NotSelectedSounds)
+                    {
+                        <li class="updatelist">
+                            <label>
+                                <input type="checkbox" class="checkbox" name="NewSoundIDs" value="@sound.SoundID" />
+                                <img class="image" src="~/@sound.ImagePath" alt="@sound.Description">
+                                <span class="quish-purple" sound-id="@sound.SoundID">@sound.Name</span>
+                            </label>
+                        </li>
+                    }
+                </ul>
+            </section>
+            <section>
+                <h6 class="updatemix-h6">This Is Your Current Mix:</h6>
+                <p>To remove from your mix, uncheck the box next to the sound.</p>
+                <ul>
+                    @foreach (var sound in Model.SelectedSounds)
+                    {
+                        <li class="updatelist">
+                            <label>
+                                <input type="checkbox" class="checkbox" name="NewSoundIDs" value="@sound.SoundID" checked />
+                                <img class="image" src="~/@sound.ImagePath" alt="@sound.Description">
+                                <span class="quish-purple" sound-id="@sound.SoundID">@sound.Name</span>
+                            </label>
+                        </li>
+                    }
+                </ul>
+            </section>
+        </div>
+
+
+    }
+</body>
+</html>
+

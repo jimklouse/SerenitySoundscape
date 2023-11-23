@@ -1,0 +1,49 @@
+﻿@model List<Mix>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/js/site.js"></script>
+    <link href="/css/site.css" rel="Stylesheet" />
+    <title>My Soundscape</title>
+</head>
+<body>
+    <h5 class="soundscapetitle-h5">My Mixes</h5>
+
+    @foreach (var mix in Model)
+    {
+        <section class="soundscape-container">
+            <h6 class="soundscape-h6">@mix.Name</h6>
+
+            <ul>
+                @foreach (var sound in mix.SelectedSounds)
+                {
+                    <li class="soundscape-list">
+                        <img class="image" src="~/@sound.ImagePath" alt="@sound.Description">
+                        <span class="quish-purple" sound-id="@sound.SoundID">@sound.Name</span>
+                    </li>
+                }
+            </ul>
+            <ul id="inline-id">
+                <li id="inline-id">
+                    <a class="nav-updatelink" href="/Mix/PlayMix/@mix.MixID">Play Mix</a>
+                </li>
+                <li id="inline-id">
+
+                    @using (Html.BeginForm("Update Mix", "Mix", FormMethod.Post))
+                    {
+                        <input type="hidden" asp-for="@mix.MixID" value="@mix.MixID" />
+                        <a class="nav-updatelink" href="/Mix/UpdateMix/@mix.MixID">Update Mix</a>
+                    }
+                </li>
+                <li id="inline-id">
+                    @using (Html.BeginForm("DeleteMix", "Mix", FormMethod.Post))
+                    {
+                        <input type="hidden" asp-for="@mix.MixID" value="@mix.MixID" />
+                        <a class="nav-linkcaution" href="/Mix/DeleteMix/@mix.MixID" onclick="return confirm('Are you sure you want to delete this Mix?')">Delete Mix</a>
+                    }
+                </li>
+            </ul>
+        </section>
+    }
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿@model Mix
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/css/site.css" rel="Stylesheet" />
+    <title>@Model.Name Player</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var audioElements = document.querySelectorAll('.mixaudio');
+
+            audioElements.forEach(function (audio) {
+                audio.onplay = function () {
+                    audio.volume = 1.00;
+                };
+                audio.play();
+            });
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <h5 class="playmix-h5">Playing '@Model.Name'</h5>
+    </section>
+
+    <section class="playmix-container">
+        @foreach (var sound in @Model.SelectedSounds)
+        {
+            <dl class="d-flex align-items-center justify-content-between flex-wrap">
+                <dt>
+                    <img class="playimage" src="~/@sound.ImagePath" alt="@sound.Description">
+
+                </dt>
+                <dd>
+                    <span class="quish-purple" sound-id="@sound.SoundID">@sound.Name - @sound.Description</span>
+                </dd>
+                <dd>
+                    <audio class="mixaudio" controls loop>
+                        <source src="~/@sound.FilePath" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </dd>
+
+            </dl>
+        }
+    </section>
+    <section>
+        <ul id="inline-id">
+
+            <li id="inline-id">
+
+                @using (Html.BeginForm("Update Mix", "Mix", FormMethod.Post))
+                {
+                    <input type="hidden" asp-for="@Model.MixID" value="@Model.MixID" />
+                    <a class="nav-updatelink" href="/Mix/UpdateMix/@Model.MixID">Update Mix</a>
+                }
+            </li>
+            <li id="inline-id">
+                @using (Html.BeginForm("DeleteMix", "Mix", FormMethod.Post))
+                {
+                    <input type="hidden" asp-for="@Model.MixID" value="@Model.MixID" />
+                    <a class="nav-linkcaution" href="/Mix/DeleteMix/@Model.MixID" onclick="return confirm('Are you sure you want to delete this Mix?')">Delete Mix</a>
+                }
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

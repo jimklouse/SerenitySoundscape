@@ -1,0 +1,106 @@
+﻿@model List<Sound>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/js/site.js"></script>
+    <link href="/css/site.css" rel="Stylesheet" />
+    <title>Serenity Soundscape</title>
+</head>
+<body>
+
+
+    <form asp-controller="Mix" asp-action="CreateMix" method="post">
+
+        <section class="index-container">
+            <h3 class="index-h3">Sample and Choose the Tracks For Your Mix</h3>
+            <p class="p-container">Take your time and sample all of the tracks we have available.</p>
+            <p class="p-container">When you find the tracks you want to add to your mix, check the boxes next to the track name and click.</p>
+            <button id="submitSounds" type="submit">Add Tracks and Create Mix</button>
+        </section>
+        <div>
+            <h2 class="index-h2">Sounds of Nature</h2>
+            <table class="index-table">
+                @foreach (var sound in Model)
+                {
+                    if (sound.Category == "Sounds of Nature")
+                    {
+                        <tr>
+                            <td class="index-nature-checkbox">
+                                <input type="checkbox" class="checkbox" name="selectedSoundIDs" value="@sound.SoundID" />
+                                <img class="image" src="@sound.ImagePath" alt="@sound.Description">
+                                @sound.Name
+
+
+                            </td>
+                            <td class="index-nature-desc">
+                                @sound.Description
+                            </td>
+                            <td class="index-audio">
+
+                                <audio id="auto" controls loop>
+                                    <source src="@sound.FilePath" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+
+
+            <h2 class="index-h2">Instruments and Music</h2>
+            <table class="index-table">
+                @foreach (var sound in Model)
+                {
+                    if (sound.Category == "Man-Made")
+                    {
+                        <tr>
+                            <td class="index-manmade-checkbox">
+                                <input type="checkbox" class="checkbox" name="selectedSoundIDs" value="@sound.SoundID" />
+                                <img class="image" src="@sound.ImagePath" alt="@sound.Description">
+                                @sound.Name
+                            </td>
+                            <td class="index-manmade-desc">
+                                @sound.Description
+                            </td>
+                            <td class="index-audio">
+                                <audio id="auto" controls loop>
+                                    <source src="@sound.FilePath" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+
+            <h2 class="index-h2">Background Noise</h2>
+            <table class="index-table">
+                @foreach (var sound in Model)
+                {
+                    if (sound.Category == "Background Noise")
+                    {
+                        <tr>
+                            <td class="index-background-checkbox">
+                                <input type="checkbox" class="checkbox" name="selectedSoundIDs" value="@sound.SoundID" />
+                                <img class="image" src="@sound.ImagePath" alt="@sound.Description">
+                                @sound.Name
+                            </td>
+                            <td class="index-background-desc">
+                                @sound.Description
+                            </td>
+                            <td class="index-audio">
+                                <audio id="auto" controls loop>
+                                    <source src="@sound.FilePath" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </form>
+
+</body>
+</html>
